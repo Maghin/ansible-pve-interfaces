@@ -1,0 +1,12 @@
+---
+# defaults file for pve-interface
+
+pve_interfaces_file:     '/etc/network/interfaces.new'
+pve_interfaces_template: 'interfaces.new.j2'
+
+pve_wan_interface: 'eth0'
+
+pve_lan_interface: ''
+
+pve_vmbr2_enabled: false
+pve_vmbr3_enabled: false
