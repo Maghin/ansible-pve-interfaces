@@ -8,6 +8,8 @@ pve_wan_interface: 'eth0'
 
 pve_lan_interface: ''
 
+pve_private_interface: ''
+
 pve_vmbr2_enabled: false
 pve_vmbr2_interface: ''
 
