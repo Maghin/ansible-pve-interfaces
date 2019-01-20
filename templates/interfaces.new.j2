@@ -4,7 +4,15 @@ iface lo inet loopback
 iface {{ pve_wan_interface | default(ansible_default_ipv4.interface) }} inet manual
 
 {% if pve_lan_interface | length %}
-iface {{ pve_lan_interface }} inet manual
+iface {{ pve_lan_interface }} inet {{ pve_lan_interface_mode | default ("dhcp") }}
+{% endif %}
+
+{% if pve_vmbr2_interface | length %}
+iface {{ pve_vmbr2_interface }} inet {{ pve_vmbr2_interface_mode | default ("dhcp") }}
+{% endif %}
+
+{% if pve_vmbr3_interface | length %}
+iface {{ pve_vmbr3_interface }} inet {{ pve_vmbr3_interface_mode | default ("dhcp") }}
 {% endif %}
 
 auto vmbr0
